@@ -1,0 +1,29 @@
+<!-- Simple HTML page for the comment submission -->
+<!-- Emma Macaluso, February 2021 -->
+
+<!-- Title block -->
+{% block title%} Comment on Brightspot Blog Post {%endblock%}
+
+<!-- Content form-->
+{% block content %}
+
+  <h1>
+    Add comment... 
+  </h1>
+
+  <br><br>
+
+  <div class="form-group">
+    <!-- Post grabs data and sends to server and gets a response -->
+    <form method="POST"> 
+      <!-- CSRF for protection 'Cross site request forgeries' -->
+      {% csrf_token %}
+      <!-- Display form -->
+      {{form.as_p}}
+      <!-- Button to add the comment -->
+      <button class="btn-btn-secondary">
+        Add Comment
+      </button>
+    </form>
+  </div>
+{% endblock %}

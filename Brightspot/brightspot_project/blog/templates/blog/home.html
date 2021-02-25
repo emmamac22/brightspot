@@ -1,0 +1,111 @@
+{% load static %}
+<!-- HTML for the homepage of the blog, CSS stored in style.css -->
+<!-- Emma Macaluso, February 2021 -->
+<link rel="stylesheet" type="text/css" href="{% static 'blog/styles.css' %}">
+
+<!doctype html>
+
+<html>
+<!-- Title on tab-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Brightspot Blog</title>
+
+</head>
+
+<body>
+
+<!-- Header for the buttons -->
+<header>
+  <nav>
+    <ul>
+      <!-- Nav Link to the original article used for the blog -->	
+      <li><a href="https://www.huffpost.com/entry/wandavision-scene-monica-rambeau-superhero_n_6035271dc5b66dfc1021bf0e">ORIGINAL ARTICLE</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Title and Author -->
+<section class="home-home">
+	<div class="container">
+    <h1 class="title">
+      The Brightspot Blog
+    </h1>
+    <h1 class="author">
+      Developed by Emma Macaluso
+    </h1>
+	</div>
+</section>
+
+<!-- The article section -->
+<div class="container">
+  <section class="home-article">
+    <!-- The title -->
+    <h1 class="article-title">
+      Marvel Star Reveals One ‘WandaVision’ Scene Got A Powerful Change
+    </h1>
+
+    <!-- The article -->
+    <div class="home-article-art">
+      Besides revealing that it was “Agatha All Along,” “WandaVision” stuck another big landing in its seventh episode.
+      <br>    <br>
+      After Monica Rambeau (Teyonah Parris) went through Westview’s Hex barrier one too many times, her cells were rewritten and she finally got her powers. Recently speaking to Marvel.com, Parris said she’d known what was coming since her first Marvel meeting.
+      <br>    <br>
+      “When I sat down and talked to the [‘WandaVision’ team], they explained it to me that through Monica’s compassion, through her empathy, and her willingness to put her own body on the line, she sacrifices her own self for what she believes is the greater good [to go back to Westview]. And that happens by passing through this energy field too many times, essentially,” the actor said.
+      Besides giving her powers, the scene serves as a moment for Monica to grieve the loss of her mother, as memories from her past seem to surround her during her fight through the anomaly.
+      <br>    <br>
+      She comes out on the other side stronger, and apparently “WandaVision” made a small change to show that.
+      <br>    <br>
+      Once she gets through the Hex barrier, Monica immediately confronts Wanda (Elizabeth Olsen), telling her that S.W.O.R.D. acting Director Hayward (Josh Stamberg) is trying to bring her down. Unfortunately, Wanda doesn’t really want to hear that.
+      <br>    <br>
+      So she magically removes Monica from the house, like she’s done before. But this time Monica isn’t thrown around like a rag doll. She gets a superhero landing ― though, according to Parris, it wasn’t always going to be that way.	
+      <br>    <br>
+      “Originally, I was supposed to get thrown to the ground,” Parris told Marvel.com. “And then we kind of came up with the idea of, well, what if Monica is able to now kind of harness the powers a little bit. And so we landed on that landing. That was the first moment where I really got to feel like, ‘Ooh, a superhero.’”
+      <br>    <br>
+      Considering that Parris was fan-casted as Monica Rambeau years before she got the part, the moment has been a long time coming. And it makes a powerful difference to show Monica with some control over her super abilities.
+      <br>    <br>
+      Judging by the episode’s post-credit scene, she’s going to need that sooner rather than later.
+      <br>    <br>
+    </div>
+  </section>
+</div>
+
+<!-- The comments section -->
+<hr>
+<section class="home-comments">
+  <!-- Comments title -->
+  <h2> 
+    Comments 
+  </h2>
+  <!-- Link to add new comment -->
+  <h3>
+    <a href="{% url 'add_comment'  %}">Add a new comment</a>
+  </h3>
+  <br>
+
+  <!-- Display all comments in the database -->
+  {% for comment in all_comments %}
+    <!-- Display name and date added -->
+    <strong>
+      {{comment.name}} - 
+      {{comment.date_added}}
+      <br>
+    </strong>
+    <!-- Display body -->
+    {{comment.body}}
+    <br> <br>
+  <!-- If there are no comments, just display the link -->
+  {% empty %}
+    No ones talking about this yet...
+  {% endfor %}
+  <!-- Another link to add new comment -->
+  <h3>
+    <a href="{% url 'add_comment'  %}"> Add a new comment</a>
+  </h3>
+  <hr>
+
+</section>
+</body>
+</html>

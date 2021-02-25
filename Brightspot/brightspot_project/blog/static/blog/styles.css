@@ -1,0 +1,165 @@
+/* CSS for the home page
+ *
+ * @author Emma Macaluso
+ * @version February 2021
+ */
+
+/* Import font */
+@import
+url('https://fonts.google.googleapis.com/css?family=Raleway:300,400,700,900');
+
+/* Defualt */
+* {
+	box-sizing: border-box;
+	transition: all ease-in-out 250ms;
+}
+
+/* Body style */
+body {
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+  background-color:aliceblue;
+}
+
+.container {
+	width: 95%;
+	max-width: 70em;
+	margin: 0 auto;
+}
+
+.clearfix::after, 
+section::after,
+footer::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/* Defualt styles for h1 and p */
+h1 {
+	font-weight: 300;
+	font-size: 1.7rem;
+	margin-top: 0;
+}
+
+p {
+	margin-type: 0;
+	line-height: 1.5;
+}
+	
+p:last-of-type {
+	margin-bottom: 0;
+}
+
+/* Title styles */
+.title {
+	font-size:2.5rem;
+	margin-bottom: 1.5ems;
+	font-weight: 900;
+}
+
+.title span {
+	font-weight: 300;
+	display: block; 
+	font-size:.9em;
+}
+
+.unstyled-list{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+/* Navigation link at top */
+nav {
+  float:right;
+}
+
+nav ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+  background-color: rgb(157, 189, 135);
+}
+
+nav li{
+	display: inline-block;
+	margin:1em;
+}
+
+nav a{
+	font-weight: 900;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1rem;
+	padding: .5em;
+	color: #000;
+}
+
+/* Setting for wen you over over*/
+nav a:hover,
+nav a:focus {
+	color: #DDD;
+}
+
+/*  Home top of page */
+.home-home {
+  background-color: rgb(157, 189, 135);
+	background-size: cover;
+	background-position: center;
+	padding: 10em 0;
+	color:#000;
+	height:100vh;
+	padding-top: 35vh;	
+}
+
+
+/* Article title section */ 
+.article-title {
+	font-size:2.5rem;
+	font-weight: 900;
+  color:rgb(0, 0, 0);
+  margin-bottom: .5ems;
+}
+
+/* Article words section */ 
+.home-article-art {
+	font-size:1.2rem;
+  padding: 0 1em;
+  text-align: left;
+}
+
+/* author section smaller font*/
+.author {
+  font-size:1.5rem;
+}
+
+/* Comments section*/
+.home-comments{
+  color:rgb(0, 0, 0);
+  margin-bottom: .5ems;
+  text-align: left;
+}
+
+/* Add comment section */
+.home-comments h3{
+  text-align: left;
+}
+
+/* Title for comment */
+.home-comments h2{
+	font-weight: 900;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
